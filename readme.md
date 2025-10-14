@@ -4,7 +4,7 @@
 
 - Clone the repository
 ```bash
-git clone https://github.com/milon19/orm-optim.git
+git clone https://github.com/imranasq/car_rental_system.git
 ```
 - Create a postgres database
 ```bash
@@ -12,7 +12,7 @@ psql -U postgres -c "CREATE DATABASE <dbname>"
 ```
 - Go the project directory
 ```bash
-cd orm-optim
+cd car_rental_system
 ```
 - Create a file named `.env` in the project root directory and add the following lines
 
@@ -77,7 +77,7 @@ A car rental company needs to build a system where rental companies can list the
 - Rental companies can set additional addons for rental packages.
 
 ### Database Models
-![alt text](db_diagram.png "Title")
+![alt text](db_design.png "Title")
 
 ## Tasks
 
