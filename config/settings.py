@@ -20,7 +20,6 @@ DEFAULT_APPS = [
 
 THIRD_PARTY_APPS = [
     'rest_framework',
-    'debug_toolbar',
     'django_filters',
 ]
 
@@ -33,7 +32,6 @@ LOCAL_APPS = [
 INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -115,3 +113,18 @@ REST_FRAMEWORK = {
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+if DEBUG:
+    INTERNAL_IPS = [
+        # ...
+        "127.0.0.1",
+        # ...
+    ]
+    INSTALLED_APPS = [
+        *INSTALLED_APPS,
+        "debug_toolbar",
+    ]
+    MIDDLEWARE = [
+        *MIDDLEWARE,
+        "debug_toolbar.middleware.DebugToolbarMiddleware",
+    ]

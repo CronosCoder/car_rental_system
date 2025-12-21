@@ -46,6 +46,7 @@ pip install -r requirements/local.txt
 ```
 - Run the migrations
 ```bash
+python manage.py makemigrations
 python manage.py migrate
 ```
 
@@ -68,6 +69,9 @@ python manage.py startapp <app_name> apps/<app_name>
 ## Introduction
 
 A car rental company needs to build a system where rental companies can list their cars with dynamic pricing across multiple currencies. The system needs to handle weekly pricing, multiple images per car, various rental packages, and additional addons.
+
+##### Carlist API End-point:  
+- {base_url}/cars/?currency=1&&from_date=2025-12-06&&to_date=2026-02-27
 
 ### Core Business Points
 - Rental companies can list their cars, providing details like location, features etc.
