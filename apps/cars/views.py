@@ -27,6 +27,8 @@ class CarListAPIView(APIView):
             "car_rental_packages__addons__currency",
             "car_prices",
             "car_prices__base_currency",
+            "from_location",
+            "to_location",
         )
         for backend in self.filter_backends:
             queryset = backend().filter_queryset(self.request, queryset, self)

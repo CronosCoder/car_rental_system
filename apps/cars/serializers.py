@@ -79,7 +79,7 @@ class RentalPackageSerializer(serializers.ModelSerializer):
 
 class CarListSerializer(serializers.ModelSerializer):
     from_location = serializers.CharField(source='from_location.name')
-    to_location = serializers.SerializerMethodField()
+    to_location = serializers.CharField(source='to_location.name')
     from_date = serializers.SerializerMethodField()
     to_date = serializers.SerializerMethodField()
     company = CompanySerializer()
@@ -93,9 +93,6 @@ class CarListSerializer(serializers.ModelSerializer):
     def get_to_date(self, obj):
         to_date = self.context.get('request').query_params.get('to_date')
         return to_date
-
-    def get_to_location(self, obj):
-        return obj.to_location.name
 
     def get_price(self, obj):
         currency_id = self.context.get('request').query_params.get('currency')
